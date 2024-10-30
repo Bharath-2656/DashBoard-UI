@@ -1,7 +1,7 @@
-import React, { useRef } from "react";
+import React, { useMemo, useRef } from "react";
 import { Box, Text, IconButton, HStack } from "@chakra-ui/react";
-import { NoteCard } from "./NoteCard";
 import { RightArrowIcon } from "../assets/Icons/RightArrowIcon";
+import { NoteCard } from "@/components/NoteCard";
 
 const NotesSection: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -11,18 +11,27 @@ const NotesSection: React.FC = () => {
       const scrollAmount = 300;
       const container = scrollRef.current;
       const maxScrollLeft = container.scrollWidth - container.clientWidth;
-      console.log(container.scrollLeft, "scroll left");
-      console.log(maxScrollLeft, "maxScrollLeft");
-      console.log(scrollAmount, "scrollAmount");
       if (container.scrollLeft >= maxScrollLeft - scrollAmount) {
         // If it's close to the end, reset to the beginning
-        container.scrollTo({ left: 0, behavior: "smooth" });
+        container.scrollTo({
+          left: 10,
+          behavior: "instant",
+        });
       } else {
         // Otherwise, scroll to the right by the specified amount
-        container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        container.scrollBy({
+          left: container.scrollWidth / 2,
+          behavior: "smooth",
+        });
       }
     }
   };
+
+  const getBgColor = useMemo(() => {
+    if (window.location.pathname === "/") return "white";
+    else if (window.location.pathname === "/notes")
+      return "linear-gradient(to bottom, #4318FF25, #FEC6DF)";
+  }, [window.location.pathname]);
 
   return (
     <Box
@@ -32,8 +41,9 @@ const NotesSection: React.FC = () => {
       bg="gray.50"
       overflowX={"hidden"}
       boxShadow="sm"
+      h={"100%"}
       w={"100%"}
-      h="50%"
+      bgImage={getBgColor}
     >
       <HStack>
         <Text fontSize="xl" fontWeight="bold" mb="4">
@@ -51,8 +61,23 @@ const NotesSection: React.FC = () => {
           <RightArrowIcon />
         </IconButton>
       </HStack>
-      <Box position="relative">
-        <HStack alignItems="flex-start" p="1" w="100vw">
+      <Box position="relative" w="100%">
+        <HStack alignItems="flex-start" p="1" w="200%">
+          <NoteCard
+            title="Follow Up with Mr. Ashton"
+            description="Following up on our meeting with Mr. Ashton, I wanted to recap the key points discussed and outline the action items moving forward. During the meeting, we touched upon the project timeline, budget considerations, and specific deliverables. Mr. Ashton expressed interest in exploring additional features for the software solution and requested a detailed proposal for review...."
+            date="21 May, 2024"
+            attachments={[
+              {
+                label: "Screenshot Information.png",
+                image: "https://via.placeholder.com/100",
+              },
+              {
+                label: "Important Information.pdf",
+                image: "https://via.placeholder.com/100",
+              },
+            ]}
+          />
           <NoteCard
             title="Follow Up with Mr. Ashton"
             description="Following up on our meeting with Mr. Ashton, I wanted to recap the key points discussed and outline the action items moving forward. During the meeting, we touched upon the project timeline, budget considerations, and specific deliverables. Mr. Ashton expressed interest in exploring additional features for the software solution and requested a detailed proposal for review...."

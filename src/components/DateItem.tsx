@@ -10,25 +10,24 @@ interface DateItemProps {
 const DateItem: React.FC<DateItemProps> = ({ day, date, active = false }) => {
   return (
     <>
-      <Flex flexDirection={"column"}>
+      <Flex flexDirection={"column"} w={active ? "100%" : "80%"}>
         <VStack>
           <Box
             bg={active ? "pink.400" : "#FEC6DF"}
             borderTopRadius="md"
-            w="100%"
+            w={"100%"}
           >
             <p style={{ visibility: "hidden" }}>{date}</p>
           </Box>
         </VStack>
         <VStack
-          p="2"
+          p={"2"}
           borderBottomRadius="md"
           bg={"white"}
           color={active ? "pink.600" : "gray.700"}
           boxShadow={active ? "md" : "sm"}
           borderWidth="1px"
           h={active ? "80px" : "60px"}
-          w={active ? "60px" : "50px"}
           borderColor={active ? "pink.200" : "gray.200"}
         >
           <Text fontSize={active ? "medium" : "sm"} fontWeight={"bold"}>

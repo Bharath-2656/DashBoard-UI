@@ -6,16 +6,19 @@ import { DeleteIcon } from "../assets/Icons/DeleteIcon";
 import { ThreeDotsIcon } from "../assets/Icons/ThreeDotsIcon";
 import CustomTag from "./CustomTag";
 import CustomCheckbox from "./CustomCheckBoz";
+import { ISubTask } from "@/store/taskSlice";
 
 interface TaskCardProps {
+  indexValue: number;
   title: string;
-  subTasks?: string[];
+  subTasks?: ISubTask[];
   tags: string[];
   completed: number;
   total: number;
 }
 
 const TaskCard: React.FC<TaskCardProps> = ({
+  indexValue,
   title,
   subTasks = [],
   tags,
@@ -48,9 +51,11 @@ const TaskCard: React.FC<TaskCardProps> = ({
       <VStack align="start" mt="2">
         {subTasks.map((task, index) => (
           <CustomCheckbox
+            indexValue={indexValue}
+            keyValue={index}
             key={index}
-            isChecked={index < completed}
-            label={task}
+            isChecked={task.isCompleted}
+            label={task.subTask}
           ></CustomCheckbox>
         ))}
       </VStack>

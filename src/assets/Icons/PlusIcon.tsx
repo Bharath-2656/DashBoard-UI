@@ -1,12 +1,13 @@
+import React from "react";
 import { createIcon } from "@chakra-ui/react";
 
-export const PlusIcon = createIcon({
+export const PlusIcon: React.FC = createIcon({
   displayName: "PlusIcon",
-  viewBox: "2 2 24 24",
+  viewBox: "2 1 24 24",
   path: (
     <svg
-      width="24"
-      height="24"
+      width="26"
+      height="26"
       viewBox="0 0 36 36"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

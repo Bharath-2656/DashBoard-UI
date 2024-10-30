@@ -1,7 +1,7 @@
-import React from 'react';
-import { Box, Text, VStack, IconButton } from '@chakra-ui/react';
-import { Attachment } from './Attachment';
-import { RightArrowIcon } from '../assets/Icons/RightArrowIcon';
+import React from "react";
+import { Box, Text, VStack, IconButton } from "@chakra-ui/react";
+import { Attachment } from "./Attachment";
+import { RightArrowIcon } from "../assets/Icons/RightArrowIcon";
 
 interface AttachmentType {
   label: string;
@@ -15,11 +15,16 @@ interface NoteCardProps {
   attachments?: AttachmentType[];
 }
 
-export const NoteCard: React.FC<NoteCardProps> = ({ title, description, date, attachments }) => {
+export const NoteCard: React.FC<NoteCardProps> = ({
+  title,
+  description,
+  date,
+  attachments,
+}) => {
   return (
     <Box
       p="4"
-      w="223px"
+      w="33%"
       borderRadius="md"
       bg="white"
       boxShadow="sm"
@@ -33,12 +38,16 @@ export const NoteCard: React.FC<NoteCardProps> = ({ title, description, date, at
         {description}
       </Text>
       {attachments && attachments.length > 0 && (
-        <VStack align="start"  mb="4">
+        <VStack align="start" mb="4">
           <Text fontWeight="bold" fontSize="sm">
             Attachments
           </Text>
           {attachments.map((attachment, index) => (
-            <Attachment key={index} label={attachment.label} image={attachment.image} />
+            <Attachment
+              key={index}
+              label={attachment.label}
+              image={attachment.image}
+            />
           ))}
         </VStack>
       )}
@@ -46,7 +55,9 @@ export const NoteCard: React.FC<NoteCardProps> = ({ title, description, date, at
         <Text fontSize="sm" color="gray.500">
           {date}
         </Text>
-        <IconButton aria-label="View Note" size="sm"><RightArrowIcon /></IconButton>
+        <IconButton aria-label="View Note" size="sm">
+          <RightArrowIcon />
+        </IconButton>
       </Box>
     </Box>
   );

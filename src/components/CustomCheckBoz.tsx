@@ -1,23 +1,31 @@
-// CustomCheckbox.tsx
-import React, { useState } from 'react';
-import { Box, Text, Flex } from '@chakra-ui/react';
+import React from "react";
+import { Box, Text, Flex } from "@chakra-ui/react";
+import { useAppDispatch } from "@/store/store";
+import { updateSubTaskCompletion } from "@/store/taskSlice";
 
 interface CustomCheckboxProps {
-  label: string;
+  indexValue: number;
+  keyValue: number;
   isChecked?: boolean;
-  onChange?: (checked: boolean) => void;
+  label: string;
 }
 
-const CustomCheckbox: React.FC<CustomCheckboxProps> = ({ label, isChecked = false, onChange }) => {
-  const [checked, setChecked] = useState(isChecked);
+const CustomCheckbox: React.FC<CustomCheckboxProps> = ({
+  indexValue,
+  keyValue,
+  isChecked = false,
+  label,
+}) => {
+  const dispatch = useAppDispatch();
 
   const toggleCheckbox = () => {
-    const newCheckedState = !checked;
-    setChecked(newCheckedState);
-    isChecked = !isChecked;
-    if (onChange) {
-      onChange(newCheckedState);
-    }
+    dispatch(
+      updateSubTaskCompletion({
+        taskIndex: indexValue,
+        subTaskIndex: keyValue,
+        isCompleted: true,
+      }),
+    );
   };
 
   return (
@@ -28,17 +36,19 @@ const CustomCheckbox: React.FC<CustomCheckboxProps> = ({ label, isChecked = fals
         borderWidth="2px"
         borderRadius="md"
         borderColor="blue.500"
-        bg={checked ? 'blue.500' : 'transparent'}
+        bg={isChecked ? "blue.500" : "transparent"}
         display="flex"
         alignItems="center"
         justifyContent="center"
         mr="2"
       >
-        {checked && (
-          <Box w="2" h="2" bg="white" borderRadius="full" />
-        )}
+        {isChecked && <Box w="2" h="2" bg="white" borderRadius="full" />}
       </Box>
-      <Text fontSize="sm" color="gray.700" textDecoration={checked ? 'line-through' : 'none'}>
+      <Text
+        fontSize="sm"
+        color="gray.700"
+        textDecoration={isChecked ? "line-through" : "none"}
+      >
         {label}
       </Text>
     </Flex>

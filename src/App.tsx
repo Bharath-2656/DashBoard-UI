@@ -1,24 +1,13 @@
 import React from "react";
-import { Flex, HStack, VStack } from "@chakra-ui/react";
-import Sidebar from "./components/Sidebar";
-import Header from "./components/Header";
-import DashboardContent from "./components/DashBoardContent";
-import Calender from "./components/Calender";
+import Router from "./components/Router";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
 
 const App: React.FC = () => {
   return (
-    <Flex h="100vh" bg="gray.50" flexDirection={"column"}>
-      <HStack>
-        <Header />
-      </HStack>
-      <HStack>
-        <VStack display={"flex"} flexDirection={"row"} h='92vh'>
-          <Sidebar />
-          <DashboardContent />
-          <Calender />
-        </VStack>
-      </HStack>
-    </Flex>
+    <Provider store={store}>
+      <Router />
+    </Provider>
   );
 };
 

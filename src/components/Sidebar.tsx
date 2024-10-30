@@ -6,6 +6,7 @@ import { ActivityIcon } from "../assets/Icons/Activity";
 import { FolderIcon } from "../assets/Icons/Folder";
 import UserProfileCard from "./UserProfileCard";
 import { UpgradePro } from "./UpgradePro";
+import { Link } from "react-router-dom";
 
 const Sidebar: React.FC = () => {
   return (
@@ -21,29 +22,43 @@ const Sidebar: React.FC = () => {
       style={{}}
     >
       <VStack align="flex-start">
-        <Button variant="ghost" colorScheme="blue">
-          <Icon fontSize="16px" color="red.500">
-            {<CategriesIcon />}
-          </Icon>
-          Home
+        <Button
+          variant="ghost"
+          colorScheme="#56555C"
+          bg={"#49CCF9"}
+          w={"100%"}
+          justifyContent={"left"}
+        >
+          <Link to="/home" style={{ color: "#56555C" }}>
+            <Icon fontSize="16px" color="red.500">
+              {<CategriesIcon />}
+            </Icon>
+            Home
+          </Link>
         </Button>
         <Button variant="ghost">
-          <Icon fontSize="16px" color="blue.500">
-            {<CalenderIcon />}
-          </Icon>
-          Calender
+          <Link to="/calender" style={{ color: "#56555C" }}>
+            <Icon fontSize="16px" color="blue.500">
+              {<CalenderIcon />}
+            </Icon>
+            Calender
+          </Link>
         </Button>
         <Button variant="ghost">
-          <Icon fontSize="16px" color="blue.500">
-            {<ActivityIcon />}
-          </Icon>
-          Tasks
+          <Link to="/tasks" style={{ color: "#56555C" }}>
+            <Icon fontSize="16px" color="blue.500">
+              {<ActivityIcon />}
+            </Icon>
+            Tasks
+          </Link>
         </Button>
         <Button variant="ghost">
-          <Icon fontSize="16px" color="blue.500">
-            {<FolderIcon />}
-          </Icon>
-          Notes
+          <Link to="/notes" style={{ color: "#56555C" }}>
+            <Icon fontSize="16px" color="blue.500">
+              {<FolderIcon />}
+            </Icon>
+            Notes
+          </Link>
         </Button>
       </VStack>
       <Box display="flex" justifyContent="center" alignItems="center">

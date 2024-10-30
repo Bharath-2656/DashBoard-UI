@@ -3,7 +3,7 @@ import { Text, VStack } from "@chakra-ui/react";
 
 interface StatusCardProps {
   label: string;
-  count: number;
+  count: string;
   color: string;
   bg: string;
 }
@@ -12,18 +12,29 @@ const StatusCard: React.FC<StatusCardProps> = ({ label, count, color, bg }) => {
   return (
     <VStack
       p="2"
-      h={"80px"}
+      h={"100%"}
       borderRadius="md"
-     minW="fit-content"
+      minW="fit-content"
       bg={bg}
       borderWidth="1px"
       borderColor={color}
-      alignItems="center"
+      justifyContent={"left"}
+      alignItems="left"
     >
-      <Text fontSize="sm" color={color} fontWeight="bold">
+      <Text
+        justifyContent={"left"}
+        fontSize="sm"
+        color={color}
+        fontWeight="bold"
+      >
         {label}
       </Text>
-      <Text fontSize="2xl" color={color} fontWeight="bold">
+      <Text
+        justifyContent={"left"}
+        fontSize="2xl"
+        color={color}
+        fontWeight="bold"
+      >
         {count}
       </Text>
     </VStack>

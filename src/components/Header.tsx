@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Flex, Input, Button, Text } from "@chakra-ui/react";
 import { SearchIcon } from "../assets/Icons/Search";
+import AddTaskModal from "./AddTaskModal";
 
 const Header: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <Flex
       justify="space-between"
@@ -18,8 +20,8 @@ const Header: React.FC = () => {
       <Text fontSize="xl" fontWeight="bold" mb="8" color="purple.500">
         Protrack
       </Text>
-      <Flex backgroundColor="white" w="33%" borderRadius="12px" >
-        <SearchIcon style={{ height: "auto", marginLeft: '3%'}} />
+      <Flex backgroundColor="white" w="33%" borderRadius="12px">
+        <SearchIcon style={{ height: "auto", marginLeft: "3%" }} />
         <Input
           placeholder="Search"
           borderRadius="12px"
@@ -29,10 +31,15 @@ const Header: React.FC = () => {
         />
       </Flex>
       <Flex align="center">
-        <Button backgroundColor="#49CCF9" mr="4">
+        <Button
+          backgroundColor="#49CCF9"
+          mr="4"
+          onClick={() => setIsOpen(true)}
+        >
           + Add Tasks
         </Button>
         {/* <Avatar size="md" name="Dalton Smith" /> */}
+        {isOpen && <AddTaskModal setOpen={setIsOpen} />}
       </Flex>
     </Flex>
   );

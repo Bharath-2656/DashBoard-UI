@@ -1,13 +1,14 @@
 import { createIcon } from "@chakra-ui/react";
+import React from "react";
 
-export const RightArrowIcon = createIcon({
+export const RightArrowIcon: React.FC = createIcon({
   displayName: "RightArrowIcon",
-  viewBox: "0 0 16 16",
+  viewBox: "-4 -1 16 15",
   path: (
     <svg
       width="16"
       height="16"
-      viewBox="0 0 16 19"
+      viewBox="0 2 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
