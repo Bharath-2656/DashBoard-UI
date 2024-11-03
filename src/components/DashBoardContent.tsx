@@ -5,8 +5,7 @@ import NotesSection from "@/Screens/NotesSection";
 
 const DashboardContent: React.FC = () => {
   return (
-    <Box p="6" position={"relative"} h="92vh" w="55vw">
-      {/* Weekly Overview */}
+    <Box h="92vh">
       <Box>
         <HStack>
           <Text color={"#56555C"}>Welcome Back!</Text>

@@ -6,9 +6,9 @@ import {
   IconButton,
   AvatarRoot,
   AvatarImage,
-  AvatarIcon,
 } from "@chakra-ui/react";
 import { GearIcon } from "@/assets/Icons/GearIcon";
+import Profile from "@/assets/profile.png";
 
 const UserProfileCard: React.FC = () => {
   return (
@@ -24,11 +24,10 @@ const UserProfileCard: React.FC = () => {
       borderColor="gray.200"
     >
       <AvatarRoot>
-        <AvatarImage src="https://bit.ly/dalton-smith" mr={3} />
-        <AvatarIcon />
+        <AvatarImage src={Profile} />
       </AvatarRoot>
 
-      <Box flex="1">
+      <Box ml={"1"} flex="1">
         <Text fontSize="xs" fontWeight="bold">
           Dalton Smith
         </Text>

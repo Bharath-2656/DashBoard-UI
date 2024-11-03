@@ -29,24 +29,28 @@ const CustomCheckbox: React.FC<CustomCheckboxProps> = ({
   };
 
   return (
-    <Flex align="center" cursor="pointer" onClick={toggleCheckbox}>
+    <Flex left={19} align="center" cursor="pointer" onClick={toggleCheckbox}>
       <Box
         w="4"
         h="4"
         borderWidth="2px"
         borderRadius="md"
-        borderColor="blue.500"
-        bg={isChecked ? "blue.500" : "transparent"}
+        borderColor={isChecked ? "#49CCF9" : "gray.400"}
+        bg={isChecked ? "#49CCF9" : "transparent"}
         display="flex"
         alignItems="center"
         justifyContent="center"
         mr="2"
       >
-        {isChecked && <Box w="2" h="2" bg="white" borderRadius="full" />}
+        {isChecked && (
+          <Box w="2" h="2" bg="white">
+            {/* <PlaneTickIcon /> */}
+          </Box>
+        )}
       </Box>
       <Text
-        fontSize="sm"
-        color="gray.700"
+        fontSize="xs"
+        color={isChecked ? "#49CCF9" : "gray.700"}
         textDecoration={isChecked ? "line-through" : "none"}
       >
         {label}

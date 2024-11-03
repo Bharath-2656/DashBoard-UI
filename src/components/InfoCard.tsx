@@ -2,7 +2,8 @@ import React, { useMemo } from "react";
 import { Box, Text, HStack, Button, VStack, Flex } from "@chakra-ui/react";
 import Graph from "../assets/Icons/Graph";
 import { BookIcon } from "@/assets/Icons/BookIcon";
-import { TickIcon } from "@/assets/Icons/TickIcon";
+import { Link } from "react-router-dom";
+import { PlaneTickIcon } from "@/assets/Icons/PlaneTickIcon";
 
 const InfoCard: React.FC = () => {
   const getBgColor = useMemo(() => {
@@ -42,24 +43,26 @@ const InfoCard: React.FC = () => {
               Tasks Completed
             </Text>
             <HStack align="center" color="green.500">
-              <TickIcon />
+              <PlaneTickIcon />
               <Text fontSize="md" fontWeight="bold">
                 On track
               </Text>
             </HStack>
-            <Button
-              colorScheme="purple"
-              color={"#7B68EE"}
-              borderColor={"#7B68EE"}
-              bg={"white"}
-              fontSize={"xs"}
-              // variant="outline"
-              size="xs"
-              mt={4}
-            >
-              <BookIcon />
-              Open Tasks
-            </Button>
+            <Link to="/tasks">
+              <Button
+                colorScheme="purple"
+                color={"#7B68EE"}
+                borderColor={"#7B68EE"}
+                bg={"white"}
+                fontSize={"xs"}
+                // variant="outline"
+                size="xs"
+                mt={4}
+              >
+                <BookIcon />
+                Open Tasks
+              </Button>
+            </Link>
           </VStack>
         </Box>
         <Graph />

@@ -14,20 +14,18 @@ export type TaskListState = {
 }
 const initialState: TaskListState = {
   taskList: [{
-    taskName: 'Task 1',
+    taskName: 'Donate Rs. 500 to the charity',
     subTasks: [{
-      subTask: 'Subtask 1',
-      isCompleted: false,
+      subTask: 'Donate Rs. 500 to the charity',
+      isCompleted: true,
     },
     {
-      subTask: 'Subtask 2',
-      isCompleted: false,
+      subTask: 'Donate Rs. 500 to the charity'
+      ,
+      isCompleted: true,
     },
-    {
-      subTask: 'Subtask 3',
-      isCompleted: false,
-    }],
-    tags: ['UI', 'UX'],
+    ],
+    tags: ['Donations', 'Social'],
   }],
 }
 
@@ -44,12 +42,26 @@ export const taskSlice = createSlice({
     ) => {
       const { taskIndex, subTaskIndex, isCompleted } = action.payload;
 
-      // Ensure the taskIndex and subTaskIndex are valid
       if (
         state.taskList[taskIndex] &&
         state.taskList[taskIndex].subTasks[subTaskIndex]
       ) {
         state.taskList[taskIndex].subTasks[subTaskIndex].isCompleted = isCompleted;
+      }
+    },
+    editTask: (
+      state,
+      action: PayloadAction<{ taskIndex: number; updatedTask: ITask }>
+    ) => {
+      const { taskIndex, updatedTask } = action.payload;
+      if (state.taskList[taskIndex]) {
+        state.taskList[taskIndex] = updatedTask;
+      }
+    },
+    deleteTask: (state, action: PayloadAction<number>) => {
+      const taskIndex = action.payload;
+      if (state.taskList[taskIndex] !== undefined) {
+        state.taskList.splice(taskIndex, 1);
       }
     },
   },
@@ -59,6 +71,6 @@ type State = {
   [taskSlice.name]: TaskListState & Record<string, unknown>;
 };
 
-export const { setTasks, updateSubTaskCompletion } = taskSlice.actions;
+export const { setTasks, updateSubTaskCompletion, editTask, deleteTask } = taskSlice.actions;
 
 export const selectTasks = (state: State) => state.taskConfig.taskList;

@@ -8,7 +8,7 @@ const Graph: React.FC = () => {
       src={myImage}
       alt="Description of the image"
       position={"relative"}
-      w={"75%"}
+      w={"69%"}
       left="1%"
       borderRadius="md"
       // boxShadow="lg"

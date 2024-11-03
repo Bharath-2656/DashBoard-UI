@@ -5,9 +5,11 @@ import CustomFormLabel from "./CustomFormLabel";
 import { getRandomLightColorHex } from "@/utils/common.utils";
 import { useAppDispatch } from "@/store/store";
 import { setTasks } from "@/store/taskSlice";
+
 type CustomModalProps = {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
+
 const CustomModal: React.FC<CustomModalProps> = ({ setOpen }) => {
   const [taskHeading, setTaskHeading] = useState("");
   const [subTask, setSubTask] = useState<string[]>([]);
@@ -114,7 +116,7 @@ const CustomModal: React.FC<CustomModalProps> = ({ setOpen }) => {
                   />
                   <Button
                     onClick={() => handleAdd("subTask")}
-                    bg={"blue.500"}
+                    bg={"#49CCF9"}
                     ml={2}
                   >
                     Add
@@ -147,7 +149,7 @@ const CustomModal: React.FC<CustomModalProps> = ({ setOpen }) => {
                   onKeyUp={(e) => handleKeyPress(e, "tag")}
                   placeholder="Add a tag"
                 />
-                <Button onClick={() => handleAdd("tag")} bg={"blue.500"} ml={2}>
+                <Button onClick={() => handleAdd("tag")} bg={"#49CCF9"} ml={2}>
                   Add
                 </Button>
               </Flex>
@@ -172,7 +174,7 @@ const CustomModal: React.FC<CustomModalProps> = ({ setOpen }) => {
                 colorScheme="teal"
                 type="button"
                 mr={3}
-                bg={"blue.500"}
+                bg={"#49CCF9"}
                 onClick={handleSubmit}
               >
                 Submit

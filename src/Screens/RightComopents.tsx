@@ -5,13 +5,7 @@ import Calender from "@/components/Calender";
 
 const RightComoponents: React.FC = () => {
   return (
-    <Flex
-      flexDirection={"column"}
-      position={"relative"}
-      h="92vh"
-      right={"0"}
-      w="30vw"
-    >
+    <Flex flexDirection={"column"} position={"relative"} h="92vh" right={"0"}>
       <Box h="38vh">
         <Calender />
       </Box>

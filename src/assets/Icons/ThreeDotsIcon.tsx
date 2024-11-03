@@ -6,8 +6,8 @@ export const ThreeDotsIcon = createIcon({
   path: (
     <svg
       width="26"
-      height="8"
-      viewBox="0 0 26 8"
+      height="26"
+      viewBox="0 0 26 26"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >

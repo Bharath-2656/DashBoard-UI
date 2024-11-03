@@ -1,5 +1,11 @@
 import React from "react";
-import { Flex, HStack, useBreakpointValue, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  HStack,
+  useBreakpointValue,
+  VStack,
+} from "@chakra-ui/react";
 import DashboardContent from "@/components/DashBoardContent";
 import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
@@ -13,13 +19,24 @@ const DashBoard: React.FC = () => {
       <HStack>
         <Header />
       </HStack>
-      <HStack>
-        <VStack display={"flex"} flexDirection={"row"} h="92vh">
+      <VStack>
+        <HStack h="92vh" w="100%">
           {isSidebarVisible && <Sidebar />}
-          <DashboardContent />
-          <RightComoponents />
-        </VStack>
-      </HStack>
+          <Box
+            p="6"
+            position={"relative"}
+            w={isSidebarVisible ? "55vw" : "90vw"}
+          >
+            <DashboardContent />
+          </Box>
+          {isSidebarVisible && (
+            <Box w="30vw">
+              <RightComoponents />
+            </Box>
+          )}
+        </HStack>
+        <VStack>{!isSidebarVisible && <RightComoponents />}</VStack>
+      </VStack>
     </Flex>
   );
 };

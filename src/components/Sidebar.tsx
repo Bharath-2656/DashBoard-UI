@@ -38,7 +38,7 @@ const Sidebar: React.FC = () => {
         </Button>
         <Button variant="ghost">
           <Link to="/calender" style={{ color: "#56555C" }}>
-            <Icon fontSize="16px" color="blue.500">
+            <Icon fontSize="16px" color="#49CCF9">
               {<CalenderIcon />}
             </Icon>
             Calender
@@ -46,7 +46,7 @@ const Sidebar: React.FC = () => {
         </Button>
         <Button variant="ghost">
           <Link to="/tasks" style={{ color: "#56555C" }}>
-            <Icon fontSize="16px" color="blue.500">
+            <Icon fontSize="16px" color="#49CCF9">
               {<ActivityIcon />}
             </Icon>
             Tasks
@@ -54,7 +54,7 @@ const Sidebar: React.FC = () => {
         </Button>
         <Button variant="ghost">
           <Link to="/notes" style={{ color: "#56555C" }}>
-            <Icon fontSize="16px" color="blue.500">
+            <Icon fontSize="16px" color="#49CCF9">
               {<FolderIcon />}
             </Icon>
             Notes
