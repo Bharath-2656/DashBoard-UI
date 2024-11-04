@@ -38,7 +38,7 @@ const TaskCard: React.FC<TaskCardProps> = ({
       w="100%"
       borderColor="gray.200"
     >
-      <HStack justifyContent="space-between">
+      <HStack justifyContent="space-between" mb={4}>
         <Text
           fontWeight="bold"
           fontSize={"sm"}

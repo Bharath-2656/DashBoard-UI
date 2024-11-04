@@ -32,6 +32,7 @@ const CustomCheckbox: React.FC<CustomCheckboxProps> = ({
     <Flex left={19} align="center" cursor="pointer" onClick={toggleCheckbox}>
       <Box
         w="4"
+        ml={3}
         h="4"
         borderWidth="2px"
         borderRadius="md"

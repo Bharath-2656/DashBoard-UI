@@ -9,7 +9,7 @@ import { setTasks } from "@/store/taskSlice";
 type CustomModalProps = {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
-
+const bg = getRandomLightColorHex();
 const CustomModal: React.FC<CustomModalProps> = ({ setOpen }) => {
   const [taskHeading, setTaskHeading] = useState("");
   const [subTask, setSubTask] = useState<string[]>([]);
@@ -17,14 +17,15 @@ const CustomModal: React.FC<CustomModalProps> = ({ setOpen }) => {
 
   const [tags, setTags] = useState<string[]>([]);
   const [inputValue, setInputValue] = useState("");
+  const [tagInput, setTagInput] = useState("");
 
   const handleAdd = (type: string) => {
     if (type === "subTask" && inputValue && !subTask.includes(inputValue)) {
       setSubTask([...subTask, inputValue]);
       setInputValue("");
-    } else if (inputValue && !tags.includes(inputValue)) {
-      setTags([...tags, inputValue]);
-      setInputValue("");
+    } else if (tagInput && !tags.includes(tagInput)) {
+      setTags([...tags, tagInput]);
+      setTagInput("");
     }
   };
 
@@ -57,13 +58,6 @@ const CustomModal: React.FC<CustomModalProps> = ({ setOpen }) => {
         tags: tags,
       }),
     );
-    // toast({
-    //   title: "Submission Successful",
-    //   description: "Your message has been submitted.",
-    //   status: "success",
-    //   duration: 3000,
-    //   isClosable: true,
-    // });
     setOpen(false);
   };
 
@@ -92,7 +86,6 @@ const CustomModal: React.FC<CustomModalProps> = ({ setOpen }) => {
             <Box fontSize="xl" fontWeight="bold">
               Create a New Task
             </Box>
-            <Button onClick={() => setOpen(false)}>&times;</Button>
           </Flex>
           <form>
             <CustomFormControl error={undefined}>
@@ -128,7 +121,7 @@ const CustomModal: React.FC<CustomModalProps> = ({ setOpen }) => {
                       key={index}
                       display={"flex"}
                       flexDirection={"column"}
-                      bg={getRandomLightColorHex()}
+                      bg={bg}
                       borderRadius="18%"
                       mr={2}
                       p={2}
@@ -144,8 +137,8 @@ const CustomModal: React.FC<CustomModalProps> = ({ setOpen }) => {
             <Box>
               <Flex alignItems="center" mb={4}>
                 <Input
-                  value={inputValue}
-                  onChange={(e) => setInputValue(e.target.value)}
+                  value={tagInput}
+                  onChange={(e) => setTagInput(e.target.value)}
                   onKeyUp={(e) => handleKeyPress(e, "tag")}
                   placeholder="Add a tag"
                 />
@@ -157,7 +150,7 @@ const CustomModal: React.FC<CustomModalProps> = ({ setOpen }) => {
                 {tags.map((tag, index) => (
                   <Box
                     key={index}
-                    bg={getRandomLightColorHex()}
+                    bg={bg}
                     borderRadius="18%"
                     mr={2}
                     p={2}

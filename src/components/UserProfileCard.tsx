@@ -24,7 +24,18 @@ const UserProfileCard: React.FC = () => {
       borderColor="gray.200"
     >
       <AvatarRoot>
-        <AvatarImage src={Profile} />
+        <Box position="relative" display="inline-block">
+          <AvatarImage borderRadius={0} src={Profile} />
+          <Box
+            position="absolute"
+            bottom="-2px"
+            right="-4px"
+            bg="green.400"
+            border="2px solid white"
+            borderRadius="2px"
+            boxSize="16px"
+          />
+        </Box>
       </AvatarRoot>
 
       <Box ml={"1"} flex="1">
