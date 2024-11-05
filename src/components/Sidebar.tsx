@@ -36,7 +36,15 @@ const Sidebar: React.FC = () => {
             Home
           </Link>
         </Button>
-        <Button variant="ghost">
+        <Button
+          transition="all 0.3s ease"
+          w={"100%"}
+          justifyContent={"left"}
+          _hover={{
+            transform: "scale(1.05)",
+            bg: "#c5c4cc",
+          }}
+        >
           <Link to="/calender" style={{ color: "#56555C" }}>
             <Icon fontSize="16px" color="#49CCF9">
               {<CalenderIcon />}
@@ -44,7 +52,15 @@ const Sidebar: React.FC = () => {
             Calender
           </Link>
         </Button>
-        <Button variant="ghost">
+        <Button
+          transition="all 0.3s ease"
+          w={"100%"}
+          justifyContent={"left"}
+          _hover={{
+            transform: "scale(1.05)",
+            bg: "#c5c4cc",
+          }}
+        >
           <Link to="/tasks" style={{ color: "#56555C" }}>
             <Icon fontSize="16px" color="#49CCF9">
               {<ActivityIcon />}
@@ -52,7 +68,15 @@ const Sidebar: React.FC = () => {
             Tasks
           </Link>
         </Button>
-        <Button variant="ghost">
+        <Button
+          w={"100%"}
+          justifyContent={"left"}
+          transition="all 0.3s ease"
+          _hover={{
+            transform: "scale(1.05)",
+            bg: "#c5c4cc",
+          }}
+        >
           <Link to="/notes" style={{ color: "#56555C" }}>
             <Icon fontSize="16px" color="#49CCF9">
               {<FolderIcon />}

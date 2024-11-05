@@ -11,6 +11,8 @@ A single page Dashboard UI
 - Redux
 - react-router-dom
 - Vite
+- Eslint
+- Prettier
 
 Functionalities:
 

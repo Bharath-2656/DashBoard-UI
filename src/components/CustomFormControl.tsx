@@ -1,6 +1,14 @@
 import React from "react";
 
-const CustomFormControl = ({ children, error, isRequired = false }) => {
+interface CustomFormControlProps {
+  children: React.ReactNode;
+  error?: string;
+}
+
+const CustomFormControl: React.FC<CustomFormControlProps> = ({
+  children,
+  error,
+}) => {
   return (
     <div style={{ marginBottom: "4%" }}>
       {children}

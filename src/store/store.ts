@@ -44,16 +44,16 @@ const middleware: Middleware[] = [
 
 const store = configureStore({
   reducer: resettableRootReducer as Reducer<ReturnType<typeof rootReducer>>,
-  middleware: getDefaultMiddleware => [
-    ...getDefaultMiddleware({
+  middleware: getDefaultMiddleware => {
+    const defaultMiddleware = getDefaultMiddleware({
       serializableCheck: {
         // RTK recommended configurations for redux-persist
         // https://redux-toolkit.js.org/usage/usage-guide#use-with-redux-persist
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }),
-    ...middleware,
-  ],
+    })
+    return defaultMiddleware.concat(...middleware);
+  },
 });
 
 const persister = persistStore(store);

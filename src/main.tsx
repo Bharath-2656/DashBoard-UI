@@ -1,4 +1,3 @@
-import React from "react";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
@@ -26,16 +25,6 @@ export const system = createSystem(defaultConfig, {
     },
   },
 });
-
-// const theme2 = createSystem({
-//   styles: {
-//     global: {
-//       body: {
-//         fontFamily: "YourDesiredFont, sans-serif", // Replace 'YourDesiredFont' with your preferred font family
-//       },
-//     },
-//   },
-// });
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

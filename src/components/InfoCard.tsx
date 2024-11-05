@@ -50,6 +50,10 @@ const InfoCard: React.FC = () => {
             </HStack>
             <Link to="/tasks">
               <Button
+                transition="all 0.3s ease"
+                _hover={{
+                  transform: "scale(1.05)",
+                }}
                 colorScheme="purple"
                 color={"#7B68EE"}
                 borderColor={"#7B68EE"}

@@ -1,6 +1,14 @@
 import React from "react";
 
-const CustomFormLabel = ({ label, htmlFor }) => {
+interface CustomFormLabelProps {
+  label: string;
+  htmlFor: string;
+}
+
+const CustomFormLabel: React.FC<CustomFormLabelProps> = ({
+  label,
+  htmlFor,
+}) => {
   return (
     <label htmlFor={htmlFor} className="custom-form-label">
       {label}

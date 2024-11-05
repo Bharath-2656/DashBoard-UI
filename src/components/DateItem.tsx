@@ -10,7 +10,14 @@ interface DateItemProps {
 const DateItem: React.FC<DateItemProps> = ({ day, date, active = false }) => {
   return (
     <>
-      <Flex flexDirection={"column"} w={active ? "100%" : "80%"}>
+      <Flex
+        flexDirection={"column"}
+        w={active ? "100%" : "80%"}
+        transition="all 0.3s ease"
+        _hover={{
+          transform: "scale(1.2)",
+        }}
+      >
         <VStack>
           <Box
             bg={active ? "pink.400" : "#FEC6DF"}

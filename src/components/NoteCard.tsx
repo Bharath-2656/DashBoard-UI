@@ -55,7 +55,15 @@ export const NoteCard: React.FC<NoteCardProps> = ({
         <Text fontSize="sm" color="gray.500">
           {date}
         </Text>
-        <IconButton aria-label="View Note" size="sm">
+        <IconButton
+          aria-label="View Note"
+          size="sm"
+          transition="all 0.3s ease"
+          _hover={{
+            transform: "scale(1.05)",
+            bg: "#c5c4cc",
+          }}
+        >
           <RightArrowIcon />
         </IconButton>
       </Box>

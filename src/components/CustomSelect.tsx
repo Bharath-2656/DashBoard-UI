@@ -1,6 +1,18 @@
 import React from "react";
 
-const CustomSelect = ({ options, value, onChange, placeholder }) => {
+interface CustomSelectProps {
+  options: { value: string; label: string }[];
+  value: string;
+  onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+  placeholder: string;
+}
+
+const CustomSelect: React.FC<CustomSelectProps> = ({
+  options,
+  value,
+  onChange,
+  placeholder,
+}) => {
   return (
     <select className="custom-select" value={value} onChange={onChange}>
       <option value="" disabled>

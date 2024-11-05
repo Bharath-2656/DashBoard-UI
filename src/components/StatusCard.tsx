@@ -11,6 +11,10 @@ interface StatusCardProps {
 const StatusCard: React.FC<StatusCardProps> = ({ label, count, color, bg }) => {
   return (
     <VStack
+      transition="all 0.3s ease"
+      _hover={{
+        transform: "scale(1.2)",
+      }}
       p="2"
       h={"100%"}
       borderRadius="md"

@@ -97,7 +97,7 @@ const CustomModal: React.FC<CustomModalProps> = ({ setOpen }) => {
               />
             </CustomFormControl>
 
-            <CustomFormControl isRequired={true} error={undefined}>
+            <CustomFormControl error={undefined}>
               <CustomFormLabel label={"Sub task name"} htmlFor={"Name"} />
               <Box>
                 <Flex alignItems="center" mb={4}>

@@ -1,6 +1,7 @@
 import { createIcon } from "@chakra-ui/react";
+import React from "react";
 
-export const FolderIcon = createIcon({
+export const FolderIcon: React.FC = createIcon({
   displayName: "FolderIcon",
   viewBox: "0 0 24 24",
   path: (

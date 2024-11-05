@@ -29,13 +29,12 @@ const TasksForTheDay: React.FC = () => {
           Tasks for the day
         </Text>
         <Box>
-          <IconButton w="36px" h="36px" mr="2">
+          <IconButton w="36px" h="36px" mr="2" onClick={() => setOpen(true)}>
             <PlusIcon
-              aria-label="Add Task"
-              w="36px"
-              h="36px"
+              width="36px"
+              height="36px"
               borderRadius={"12px"}
-              onClick={() => setOpen(true)}
+              aria-label="Add Task"
             />
           </IconButton>
           <IconButton
@@ -50,7 +49,15 @@ const TasksForTheDay: React.FC = () => {
           </IconButton>
         </Box>
       </Box>
-      <VStack ref={scrollRef} maxHeight="90%" overflowY="auto">
+      <VStack
+        transition="all 0.3s ease"
+        _hover={{
+          transform: "scale(1.05)",
+        }}
+        ref={scrollRef}
+        maxHeight="90%"
+        overflowY="auto"
+      >
         {tasks.map((task, index) => (
           <TaskCard
             key={index}

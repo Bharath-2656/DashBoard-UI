@@ -1,7 +1,7 @@
 import React from "react";
 import { createIcon } from "@chakra-ui/react";
 
-export const BookIcon = createIcon({
+export const BookIcon: React.FC = createIcon({
   displayName: "BookIcon",
   viewBox: "0 0 19 12",
   path: (

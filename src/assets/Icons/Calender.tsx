@@ -1,6 +1,7 @@
 import { createIcon } from "@chakra-ui/react";
+import React from "react";
 
-export const CalenderIcon = createIcon({
+export const CalenderIcon: React.FC = createIcon({
   displayName: "CalenderIcon",
   viewBox: "0 0 24 24",
   path: (
