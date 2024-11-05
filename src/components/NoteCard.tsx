@@ -58,6 +58,7 @@ export const NoteCard: React.FC<NoteCardProps> = ({
         <IconButton
           aria-label="View Note"
           size="sm"
+          bg={"gray.100"}
           transition="all 0.3s ease"
           _hover={{
             transform: "scale(1.05)",

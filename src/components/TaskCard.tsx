@@ -68,10 +68,16 @@ const TaskCard: React.FC<TaskCardProps> = ({
           ))}
         </VStack>
         <HStack mt="4" justifyContent="flex-end">
-          <IconButton aria-label="Edit Task" size="sm" colorScheme="blue">
+          <IconButton
+            bg={"gray.100"}
+            aria-label="Edit Task"
+            size="sm"
+            colorScheme="blue"
+          >
             <EditIcon />
           </IconButton>
           <IconButton
+            bg={"gray.100"}
             aria-label="Delete Task"
             size="sm"
             colorScheme="red"
@@ -81,7 +87,12 @@ const TaskCard: React.FC<TaskCardProps> = ({
           >
             <DeleteIcon />
           </IconButton>
-          <IconButton aria-label="Settings" size="sm" colorScheme="gray">
+          <IconButton
+            bg={"gray.100"}
+            aria-label="Settings"
+            size="sm"
+            colorScheme="gray"
+          >
             <ThreeDotsIcon />
           </IconButton>
         </HStack>

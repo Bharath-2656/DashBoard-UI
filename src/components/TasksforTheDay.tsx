@@ -29,7 +29,13 @@ const TasksForTheDay: React.FC = () => {
           Tasks for the day
         </Text>
         <Box>
-          <IconButton w="36px" h="36px" mr="2" onClick={() => setOpen(true)}>
+          <IconButton
+            w="36px"
+            h="36px"
+            mr="2"
+            bg={"gray.100"}
+            onClick={() => setOpen(true)}
+          >
             <PlusIcon
               width="36px"
               height="36px"
@@ -41,6 +47,7 @@ const TasksForTheDay: React.FC = () => {
             aria-label="Scroll Down"
             w="36px"
             h="36px"
+            bg={"gray.100"}
             borderColor={"gray.300"}
             borderRadius={"12px"}
             onClick={handleScrollDown}

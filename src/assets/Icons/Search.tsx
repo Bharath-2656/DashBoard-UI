@@ -1,7 +1,7 @@
-import { createIcon } from "@chakra-ui/react";
+import { createIcon, IconProps } from "@chakra-ui/react";
 import React from "react";
 
-export const SearchIcon: React.FC = createIcon({
+export const SearchIcon: React.FC<IconProps> = createIcon({
   displayName: "SearchIcon",
   viewBox: "0 0 16 16",
   path: (

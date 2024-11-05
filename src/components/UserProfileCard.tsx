@@ -48,6 +48,7 @@ const UserProfileCard: React.FC = () => {
       </Box>
       <HStack>
         <IconButton
+          bg={"gray.200"}
           aria-label="Settings"
           variant="ghost"
           color="gray.500"

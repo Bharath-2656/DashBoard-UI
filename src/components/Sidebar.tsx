@@ -40,6 +40,7 @@ const Sidebar: React.FC = () => {
           transition="all 0.3s ease"
           w={"100%"}
           justifyContent={"left"}
+          bg={"transparent"}
           _hover={{
             transform: "scale(1.05)",
             bg: "#c5c4cc",
@@ -54,6 +55,7 @@ const Sidebar: React.FC = () => {
         </Button>
         <Button
           transition="all 0.3s ease"
+          bg={"transparent"}
           w={"100%"}
           justifyContent={"left"}
           _hover={{
@@ -71,6 +73,7 @@ const Sidebar: React.FC = () => {
         <Button
           w={"100%"}
           justifyContent={"left"}
+          bg={"transparent"}
           transition="all 0.3s ease"
           _hover={{
             transform: "scale(1.05)",
